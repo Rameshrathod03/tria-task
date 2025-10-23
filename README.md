@@ -4,7 +4,7 @@ A modern, responsive contact management application built with React, TypeScript
 
 ## 🚀 Live Demo
 
-👉 [https://tria-contact-list.vercel.app](https://tria-contact-list.vercel.app)
+👉 [https://tria-task-theta.vercel.app](https://tria-task-theta.vercel.app/)
 
 ---
 
