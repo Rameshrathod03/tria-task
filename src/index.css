@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Tria Brand Colors */
+    --tria-primary: 238 100% 67%;        /* #6366f1 - Indigo */
+    --tria-secondary: 262 83% 58%;       /* #8b5cf6 - Purple */
+    --tria-accent: 188 94% 43%;          /* #06b6d4 - Cyan */
+    --tria-success: 158 64% 52%;         /* #10b981 - Emerald */
+    --tria-warning: 38 92% 50%;          /* #f59e0b - Amber */
+    --tria-error: 0 84% 60%;             /* #ef4444 - Red */
+    
+    /* Rainbow Button Colors */
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+    
+    /* Neutral Colors */
+    --tria-gray-50: 248 250 252;         /* #f8fafc */
+    --tria-gray-100: 241 245 249;        /* #f1f5f9 */
+    --tria-gray-200: 226 232 240;        /* #e2e8f0 */
+    --tria-gray-300: 203 213 225;        /* #cbd5e1 */
+    --tria-gray-400: 148 163 184;        /* #94a3b8 */
+    --tria-gray-500: 100 116 139;        /* #64748b */
+    --tria-gray-600: 71 85 105;          /* #475569 */
+    --tria-gray-700: 51 65 85;           /* #334155 */
+    --tria-gray-800: 30 41 59;           /* #1e293b */
+    --tria-gray-900: 15 23 42;           /* #0f172a */
+    
+    /* Semantic Colors - Professional Light mode */
+    --background: 0 0% 100%;                    /* Pure white */
+    --foreground: 0 0% 5%;                      /* Very dark gray */
+    --card: 0 0% 100%;                         /* Pure white */
+    --card-foreground: 0 0% 5%;                /* Very dark gray */
+    --popover: 0 0% 100%;                      /* Pure white */
+    --popover-foreground: 0 0% 5%;             /* Very dark gray */
+    --primary: var(--tria-primary);            /* Tria primary color */
+    --primary-foreground: 0 0% 100%;          /* White text on primary */
+    --secondary: 0 0% 96%;                     /* Light gray */
+    --secondary-foreground: 0 0% 10%;          /* Dark text on secondary */
+    --muted: 0 0% 96%;                         /* Light gray */
+    --muted-foreground: 0 0% 45%;              /* Medium gray */
+    --accent: var(--tria-accent);              /* Tria accent color */
+    --accent-foreground: 0 0% 100%;            /* White text on accent */
+    --destructive: var(--tria-error);          /* Tria error color */
+    --destructive-foreground: 0 0% 100%;      /* White text on error */
+    --border: 0 0% 90%;                        /* Light border */
+    --input: 0 0% 96%;                         /* Light input background */
+    --ring: var(--tria-primary);               /* Tria primary for focus */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Pitch black theme like Tria app */
+    --background: 0 0% 0%;                    /* Pure black */
+    --foreground: 0 0% 100%;                  /* Pure white */
+    --card: 0 0% 8%;                          /* Very dark gray */
+    --card-foreground: 0 0% 100%;             /* Pure white */
+    --popover: 0 0% 8%;                       /* Very dark gray */
+    --popover-foreground: 0 0% 100%;          /* Pure white */
+    --primary: var(--tria-primary);           /* Keep Tria primary */
+    --primary-foreground: 0 0% 100%;          /* Pure white */
+    --secondary: 0 0% 12%;                    /* Dark gray */
+    --secondary-foreground: 0 0% 100%;        /* Pure white */
+    --muted: 0 0% 12%;                        /* Dark gray */
+    --muted-foreground: 0 0% 60%;             /* Light gray */
+    --accent: var(--tria-accent);             /* Keep Tria accent */
+    --accent-foreground: 0 0% 100%;           /* Pure white */
+    --destructive: var(--tria-error);         /* Keep Tria error */
+    --destructive-foreground: 0 0% 100%;      /* Pure white */
+    --border: 0 0% 15%;                       /* Dark border */
+    --input: 0 0% 12%;                        /* Dark input */
+    --ring: var(--tria-primary);              /* Keep Tria primary */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Tria Brand Color Utilities */
+  .text-tria-primary { color: hsl(var(--tria-primary)); }
+  .text-tria-secondary { color: hsl(var(--tria-secondary)); }
+  .text-tria-accent { color: hsl(var(--tria-accent)); }
+  .text-tria-success { color: hsl(var(--tria-success)); }
+  .text-tria-warning { color: hsl(var(--tria-warning)); }
+  .text-tria-error { color: hsl(var(--tria-error)); }
+  
+  .bg-tria-primary { background-color: hsl(var(--tria-primary)); }
+  .bg-tria-secondary { background-color: hsl(var(--tria-secondary)); }
+  .bg-tria-accent { background-color: hsl(var(--tria-accent)); }
+  .bg-tria-success { background-color: hsl(var(--tria-success)); }
+  .bg-tria-warning { background-color: hsl(var(--tria-warning)); }
+  .bg-tria-error { background-color: hsl(var(--tria-error)); }
+  
+  /* Shadow utilities */
+  .shadow-xs { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
+  .shadow-zinc-950\/10 { box-shadow: 0 1px 2px 0 rgb(24 24 27 / 0.1); }
+  .shadow-tria-error\/10 { box-shadow: 0 1px 2px 0 hsl(var(--tria-error) / 0.1); }
+  .shadow-tria-secondary\/10 { box-shadow: 0 1px 2px 0 hsl(var(--tria-secondary) / 0.1); }
+  
+  .border-tria-primary { border-color: hsl(var(--tria-primary)); }
+  .border-tria-secondary { border-color: hsl(var(--tria-secondary)); }
+  .border-tria-accent { border-color: hsl(var(--tria-accent)); }
+  .border-tria-error { border-color: hsl(var(--tria-error)); }
+  .border-tria-error\/20 { border-color: hsl(var(--tria-error) / 0.2); }
+  .border-tria-error\/30 { border-color: hsl(var(--tria-error) / 0.3); }
+  .border-tria-secondary\/20 { border-color: hsl(var(--tria-secondary) / 0.2); }
+  .border-tria-secondary\/30 { border-color: hsl(var(--tria-secondary) / 0.3); }
+  
+  /* Gradient utilities */
+  .bg-gradient-tria {
+    background: linear-gradient(135deg, hsl(var(--tria-primary)), hsl(var(--tria-secondary)));
+  }
+  
+  .bg-gradient-tria-accent {
+    background: linear-gradient(135deg, hsl(var(--tria-accent)), hsl(var(--tria-primary)));
+  }
+  
+  /* Light mode enhancements */
+  .bg-card {
+    background: hsl(0 0% 100%);
+    border: 1px solid hsl(0 0% 90%);
+  }
+  
+  .bg-muted {
+    background: hsl(0 0% 96%);
+  }
+  
+  .text-muted-foreground {
+    color: hsl(0 0% 45%);
+  }
+  
+  .border-border {
+    border-color: hsl(0 0% 90%);
+  }
+  
+  /* Light mode specific styles */
+  .text-foreground {
+    color: hsl(0 0% 5%);
+  }
+  
+  /* Fix yellow borders and focus states */
+  .focus\:ring-2:focus {
+    --tw-ring-color: hsl(var(--tria-primary) / 0.2);
+  }
+  
+  .focus\:ring-ring:focus {
+    --tw-ring-color: hsl(var(--tria-primary) / 0.2);
+  }
+  
+  /* Professional light mode shadows */
+  .shadow-sm {
+    box-shadow: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+  }
+  
+  .shadow-md {
+    box-shadow: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
+  }
+  
+  /* Light mode input styles */
+  input:focus {
+    outline: 2px solid hsl(var(--tria-primary) / 0.2);
+    outline-offset: 2px;
+  }
+  
+  /* Light mode button styles */
+  button:focus {
+    outline: 2px solid hsl(var(--tria-primary) / 0.2);
+    outline-offset: 2px;
+  }
+
+  /* Pitch black theme enhancements */
+  .dark .bg-card {
+    background: hsl(0 0% 8%);
+    border: 1px solid hsl(0 0% 15%);
+  }
+  
+  .dark .bg-muted {
+    background: hsl(0 0% 12%);
+  }
+  
+  .dark .text-muted-foreground {
+    color: hsl(0 0% 60%);
+  }
+  
+  /* Glow effects for buttons and interactive elements */
+  .dark .hover\:shadow-tria-primary\/25:hover {
+    box-shadow: 0 10px 25px -5px hsl(var(--tria-primary) / 0.25);
+  }
+  
+  .dark .bg-gradient-tria {
+    box-shadow: 0 4px 15px hsl(var(--tria-primary) / 0.3);
+  }
+  
+  /* Enhanced contrast for better readability */
+  .dark .text-foreground {
+    color: hsl(0 0% 95%);
+  }
+  
+  .dark .border-border {
+    border-color: hsl(0 0% 15%);
+  }
+}
+
+/* Rainbow Button Animation */
+@keyframes rainbow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.animate-rainbow {
+  animation: rainbow var(--speed, 2s) infinite linear;
+}
